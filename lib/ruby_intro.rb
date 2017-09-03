@@ -13,10 +13,42 @@ end
 
 def max_2_sum arr
   # YOUR CODE HERE
+  
+
+  arr.sort!
+  
+  if arr.length == 0
+    return 0
+  elsif arr.length == 1
+    return arr[0]
+  else
+      firstLargest = arr[arr.length-1]
+      secondLargest = arr[arr.length-2]
+      return (firstLargest+secondLargest)
+  end 
+  
+  
+  return false
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  
+
+  for i in 0...arr.length-1
+  
+    for j in i+1...arr.length
+    
+    if arr[i]+arr[j] == n
+      return arr[i]+arr[j] == n
+    end
+  
+  
+    end
+  
+  end
+  
+  return false
+  
 end
 
 # Part 2
