@@ -13,8 +13,6 @@ end
 
 def max_2_sum arr
   # YOUR CODE HERE
-  
-
   arr.sort!
   
   if arr.length == 0
@@ -26,9 +24,6 @@ def max_2_sum arr
       secondLargest = arr[arr.length-2]
       return (firstLargest+secondLargest)
   end 
-  
-  
-  return false
 end
 
 def sum_to_n? arr, n
