@@ -49,19 +49,79 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, #{name}"
 end
 
 def starts_with_consonant? s
   # YOUR CODE HERE
+  
+  letter = s[0]
+  
+  case letter
+  when letter == "A"
+    return true
+  when letter == "E"
+    return true
+  when letter == "I"
+    return true
+  when letter == "O"
+    return true
+  when letter == "U"
+    return true
+  else
+    return false
+  end
+
+
+  
 end
 
 def binary_multiple_of_4? s
   # YOUR CODE HERE
+  
+  puts "s #{s} to binary #{s.to_i(2)}"
+  
+  
+  if s.to_i(2) == 0
+    return false
+  else
+    binary = s.to_i(2)
+    return binary % 4 == 0
+  end
+  
 end
 
 # Part 3
 
 class BookInStock
 # YOUR CODE HERE
+
+  def initialize(isbn, price)
+    raise ArgumentError if isbn.length == 0 || price <= 0
+    @isbn = isbn
+    @price = price
+  end
+  
+  def isbn
+    @isbn
+  end
+  
+  def isbn=(new_isbn)
+    raise ArgumentError if new_isbn.length == 0
+    @isbn = new_isbn
+  end
+  
+  def price
+    @price
+  end
+  
+  def price=(new_price)
+    raise ArgumentError if new_price <= 0
+    @price = new_price
+  end
+  
+  def price_as_string
+    return "$%0.2f" % [@price]
+  end
+
 end
