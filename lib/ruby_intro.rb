@@ -55,23 +55,21 @@ end
 def starts_with_consonant? s
   # YOUR CODE HERE
   
-  letter = s[0]
+  if s.empty?
+    return false
+  end
   
-  case letter
-  when letter == "A"
-    return true
-  when letter == "E"
-    return true
-  when letter == "I"
-    return true
-  when letter == "O"
-    return true
-  when letter == "U"
+  letter = s[0].upcase
+  
+  if !letter.match(/[A-Z]/)
+    return false
+  elsif (letter.match(/[^AEIOU]/))
     return true
   else
     return false
   end
-
+  
+  
 
   
 end
@@ -79,10 +77,9 @@ end
 def binary_multiple_of_4? s
   # YOUR CODE HERE
   
-  puts "s #{s} to binary #{s.to_i(2)}"
-  
-  
-  if s.to_i(2) == 0
+  if s.empty?
+    return false
+  elsif s.delete('01') != ''
     return false
   else
     binary = s.to_i(2)
